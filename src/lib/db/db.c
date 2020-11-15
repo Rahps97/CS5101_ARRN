@@ -4,7 +4,6 @@
 #include "../../headers/userstruct.h" //struct datatype for users and products
 
 
-
 /*
  * function to read users data from users.dat file
  * usage: refer documentation
@@ -176,7 +175,7 @@ void usersdata()
     fwrite(&customer4, sizeof(struct users), 1, outfile);
 
     if(fwrite != 0) {
-        printf("Data added successfully\n");
+        printf("User Data added successfully\n");
     } else {
         printf("Error. Cannot write to file\n");
     }
@@ -194,19 +193,56 @@ void productsdata()
         exit(1);
     }
 
-    struct products product1 = {1, "Reebok Shoes", "Shoes and Handbags", "Asian Store", 1499.0, 4.7, 167};
+    struct products product1 = {1, "Reebok", "Shoes", "Asian", 1499.0, 167, 1};
 
     fwrite(&product1, sizeof(struct products), 1, outfile);
-    //fwrite(&product2, sizeof(struct products), 1, outfile);
     //fwrite(&product3, sizeof(struct products), 1, outfile);
     //fwrite(&product4, sizeof(struct products), 1, outfile);
     //fwrite(&product5, sizeof(struct products), 1, outfile);
 
     if(fwrite != 0) {
-        printf("Data added successfully\n");
+        printf("Products Data added successfully\n");
     } else {
         printf("Error. Cannot write to file\n");
     }
 
     fclose(outfile);
+}
+
+int getid(char target[])
+{
+    FILE *infile;
+    int i;
+    i=0;
+    if(strcmp(target, "users")==0) {
+        infile=fopen("users.dat", "r");
+        if(infile==NULL)
+        {
+            fprintf(stderr, "\nError. Cannot open file\n");
+            exit(1);
+        }
+
+        struct users input;
+
+        while(fread(&input, sizeof(struct users), 1, infile)) {
+            i++;
+        }
+        fclose(infile);
+        return i;
+    } else {
+        infile=fopen("products.dat", "r");
+        if(infile==NULL)
+        {
+            fprintf(stderr, "\nError. Cannot open file\n");
+            exit(1);
+        }
+
+        struct products input;
+
+        while(fread(&input, sizeof(struct products), 1, infile)) {
+            i++;
+        }
+        fclose(infile);
+        return i;
+    }
 }

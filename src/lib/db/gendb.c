@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include "db.h"
+#include "../../headers/db.h"
 
 int main()
 {
     usersdata();
-    printf("Users data generated.\n");
+    productsdata();
 }

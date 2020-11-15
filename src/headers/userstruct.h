@@ -15,12 +15,12 @@ struct users
 struct products
 {
     int id;
-    char pname[50];
-    char category[20];
-    char seller[20];
+    char pname[150];
+    char category[120];
+    char seller[100];
     float price;
-    float ratings;
     int stock;
+    int status;
 };
 
 #endif

@@ -2,8 +2,8 @@
 
 DIR=src
 
-main: main.o register.o db.o login.o ${DIR}/headers/colors.h
-	gcc main.o db.o login.o register.o -o main
+main: main.o register.o db.o login.o addproducts.o ${DIR}/headers/colors.h
+	gcc main.o db.o login.o register.o addproducts.o -o main
 
 main.o: ${DIR}/main.c
 	gcc -c ${DIR}/main.c
@@ -12,7 +12,9 @@ db.o: ${DIR}/lib/db/db.c ${DIR}/headers/userstruct.h
 	gcc -c ${DIR}/lib/db/db.c
 
 register.o: ${DIR}/lib/users/register.c ${DIR}/lib/db/db.c ${DIR}/headers/db.h ${DIR}/headers/userstruct.h
-	gcc -c ${DIR}/lib/users/register.c
+
+addproducts.o: ${DIR}/lib/db/db.c ${DIR}/headers/db.h ${DIR}/headers/userstruct.h
+	gcc -c ${DIR}/lib/products/addproducts.c
 
 login.o: ${DIR}/lib/users/login.c ${DIR}/lib/db/db.c ${DIR}/headers/db.h ${DIR}/headers/userstruct.h
 	gcc -c ${DIR}/lib/users/login.c
@@ -20,8 +22,11 @@ login.o: ${DIR}/lib/users/login.c ${DIR}/lib/db/db.c ${DIR}/headers/db.h ${DIR}/
 seed: ${DIR}/lib/db/db.c ${DIR}/headers/db.h
 	gcc ${DIR}/lib/db/gendb.c ${DIR}/lib/db/db.c -o seed 
 
-mv_db:
-	mv ./users.dat ${DIR}/lib/db
+backup_db:
+	cp ./*.dat ${DIR}/lib/db
 
 clean:
-	rm -f *.o main users.dat products.dat seed && cp ${DIR}/lib/db/users.dat ./users.dat 2>/dev/null && cp ${DIR}/lib/db/products.dat ./products.dat 2>/dev/null
+	rm -f *.o main seed
+
+reset:
+	rm -f *.o main users.dat products.dat seed ${DIR}/lib/db/*.dat

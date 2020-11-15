@@ -1,14 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../../headers//db.h"
+#include "../../headers/db.h"
 #include "../../headers/userstruct.h"
-int getnewid();
 
 void regi()
 {
     struct users input;
-    input.id=getnewid();
+    input.id=getid("users")+1;
     printf("\nFirst Name: ");
     scanf("%s", input.fname);
 
@@ -23,15 +22,3 @@ void regi()
     strcpy(input.role, "customer");
     writeusers(input);
 }
-
-int getnewid()
-{
-    struct users data;
-    data = readusers(0);
-    if(data.id==-1) {
-        return 1;
-    } else {
-        return data.id+1;
-    }
-}
-
