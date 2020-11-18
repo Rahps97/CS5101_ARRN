@@ -6,6 +6,7 @@
 #include "headers/db.h"
 #include "headers/addproducts.h"
 #include "headers/interface.h"
+#include "headers/userstruct.h"
 
 int main(void)
 {
@@ -14,19 +15,24 @@ int main(void)
     //usersdata();
     //system("clear");
     //addProducts();
+    //readproducts(0);
+    //readusers(2);
+    //readproducts(2);
     //printf("Here\n");
     //int id;
     //id=getid("products");
     //printf("From main: %d\n", id);
-    if(main_interface()==1) {
-        login_interface();
-        //login("akash", "akash");
-    } else if(main_interface()==2) {
-        //regi();
-        register_interface();
-    } else {
-        printf("Invalid input.");
-        exit(1);
-    }
+
+
+    //if(main_interface()==1) {
+    //    login_interface();
+    //    //login("akash", "akash");
+    //} else if(main_interface()==2) {
+    //    //regi();
+    //    register_interface();
+    //} else {
+    //    printf("Invalid input.");
+    //    exit(1);
+    //}
     return 1;
 }

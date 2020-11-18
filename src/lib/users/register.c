@@ -4,21 +4,15 @@
 #include "../../headers/db.h"
 #include "../../headers/userstruct.h"
 
-void regi()
+void regi(char fname[], char lname[], char username[], char password[])
 {
     struct users input;
     input.id=getid("users")+1;
-    printf("\nFirst Name: ");
-    scanf("%s", input.fname);
-
-    printf("\nLast Name: ");
-    scanf("%s", input.lname);
-
-    printf("\nUsername: ");
-    scanf("%s", input.username);
-
-    printf("\nPassword: ");
-    scanf("%s", input.password);
+    strcpy(input.fname, fname);
+    strcpy(input.lname, lname);
+    strcpy(input.username, username);
+    strcpy(input.password, password);
     strcpy(input.role, "customer");
+    input.status=1;
     writeusers(input);
 }

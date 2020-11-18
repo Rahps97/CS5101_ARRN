@@ -27,5 +27,4 @@ void addProducts()
 
     input.status=1;
     writeproducts(input);
-
 }

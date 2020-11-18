@@ -48,7 +48,7 @@ int main_interface()
 	for(i=1;i<=n;i=i+1){
 		printf(" ");
 	}
-	printf("  (2)\n\n\n\n\n\n",str3);
+	printf("  (2)\n\n\n\n\n\n", str3);
 	
 	
 	
@@ -326,7 +326,7 @@ void register_interface()
 	scanf("%s", check);
 	
 	if(ynprompt(check)==0) {
-        regi();
+        regi(firstname, lastname, username, password);
     } else {
         register_interface();
     }

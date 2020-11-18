@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../../headers/userstruct.h" //struct datatype for users and products
+#include "../../headers/db.h" //struct datatype for users and products
 
 
 /*
@@ -13,6 +14,7 @@ struct users readusers(int id)
 {
     FILE *infile;
     int i;
+    int userscount=getid("users");
 
     infile=fopen("users.dat", "r");
     if(infile==NULL)
@@ -21,10 +23,10 @@ struct users readusers(int id)
         exit(1);
     }
 
-    struct users outstruct[5];
+    struct users outstruct[userscount];
     struct users input;
 
-    for(i=0; i<5; i++) {
+    for(i=0; i<userscount; i++) {
         fread(&input, sizeof(struct users), 1, infile);
         outstruct[i]=input;
     }
@@ -58,7 +60,8 @@ struct users readusers(int id)
     */
 
     fclose(infile);
-    return outstruct[id];
+    printf("%s\n", outstruct[id-1].fname);
+    return outstruct[id-1];
 }
 
 
@@ -70,6 +73,8 @@ struct users readusers(int id)
 struct products readproducts(int id)
 {
     FILE *infile;
+    int i;
+    int productscount=getid("products");
 
     infile=fopen("products.dat", "r");
     if(infile==NULL)
@@ -78,21 +83,21 @@ struct products readproducts(int id)
         exit(1);
     }
 
-    struct products outstruct;
+    struct products outstruct[productscount];
     struct products input;
 
-    while(fread(&input, sizeof(struct products), 1, infile))
-    {
-        if(id!=0) {
-            if(input.id==id) {
-                outstruct = input;
-            }
-        } else {
-            outstruct = input;
+    if(id<=productscount) {
+        printf("ProductsCount: %d\n", productscount);
+        for(i=0; i<productscount; i++) {
+            fread(&input, sizeof(struct products), 1, infile);
+            outstruct[i]=input;
+            printf("Forloop: %d\n", i);
         }
     }
+
+    printf("%s\n", outstruct[id-1].pname);
     fclose(infile);
-    return outstruct;
+    return outstruct[id-1];
 }
 
 
@@ -194,8 +199,10 @@ void productsdata()
     }
 
     struct products product1 = {1, "Reebok", "Shoes", "Asian", 1499.0, 167, 1};
+    struct products product2 = {2, "Nike", "Shoes", "Chineese", 1499.0, 167, 1};
 
     fwrite(&product1, sizeof(struct products), 1, outfile);
+    fwrite(&product2, sizeof(struct products), 1, outfile);
     //fwrite(&product3, sizeof(struct products), 1, outfile);
     //fwrite(&product4, sizeof(struct products), 1, outfile);
     //fwrite(&product5, sizeof(struct products), 1, outfile);
