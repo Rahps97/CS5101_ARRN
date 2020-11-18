@@ -8,7 +8,7 @@
 void addProducts()
 {
     struct products input;
-    input.id=getid("products");
+    input.id=getid("products")+1;
 
     printf("\nProduct Name: ");
     scanf("%s", input.pname);

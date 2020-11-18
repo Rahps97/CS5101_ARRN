@@ -1,32 +1,44 @@
 # Makefile
 
 DIR=src
+USERS=${DIR}/lib/users
+PRODUCTS=${DIR}/lib/products
+DB=${DIR}/lib/db
+HEADERS=${DIR}/headers
+OBS=register.o login.o db.o addproducts.o interface.o
 
-main: main.o register.o db.o login.o addproducts.o ${DIR}/headers/colors.h
-	gcc main.o db.o login.o register.o addproducts.o -o main
+main: main.o ${OBS} libtools.a
+	gcc $< -o main -L. -ltools
+
+libtools.a: ${OBS}
+	ar -rc libtools.a -o *.o && ranlib libtools.a
 
 main.o: ${DIR}/main.c
-	gcc -c ${DIR}/main.c
+	gcc -c $<
 
-db.o: ${DIR}/lib/db/db.c ${DIR}/headers/userstruct.h
-	gcc -c ${DIR}/lib/db/db.c
+register.o: ${USERS}/register.c ${DB}/db.c ${HEADERS}/db.h ${HEADERS}/userstruct.h
+	gcc -c $<
 
-register.o: ${DIR}/lib/users/register.c ${DIR}/lib/db/db.c ${DIR}/headers/db.h ${DIR}/headers/userstruct.h
+login.o: ${USERS}/login.c ${DB}/db.c ${HEADERS}/db.h ${HEADERS}/userstruct.h
+	gcc -c $<
 
-addproducts.o: ${DIR}/lib/db/db.c ${DIR}/headers/db.h ${DIR}/headers/userstruct.h
-	gcc -c ${DIR}/lib/products/addproducts.c
+db.o: ${DB}/db.c ${HEADERS}/userstruct.h
+	gcc -c $<
 
-login.o: ${DIR}/lib/users/login.c ${DIR}/lib/db/db.c ${DIR}/headers/db.h ${DIR}/headers/userstruct.h
-	gcc -c ${DIR}/lib/users/login.c
+addproducts.o: ${PRODUCTS}/addproducts.c ${DB}/db.c ${HEADERS}/db.h ${HEADERS}/userstruct.h
+	gcc -c $<
 
-seed: ${DIR}/lib/db/db.c ${DIR}/headers/db.h
-	gcc ${DIR}/lib/db/gendb.c ${DIR}/lib/db/db.c -o seed 
+interface.o: ${DIR}/interface.c ${HEADERS}/interface.h
+	gcc -c $<
+
+seed: ${DB}/db.c ${HEADERS}/db.h
+	gcc ${DB}/gendb.c $< -o seed 
 
 backup_db:
-	cp ./*.dat ${DIR}/lib/db
+	cp ./*.dat ${DB}
 
 clean:
-	rm -f *.o main seed
+	rm -f *.o *.a main seed
 
 reset:
-	rm -f *.o main users.dat products.dat seed ${DIR}/lib/db/*.dat
+	rm -f *.o main users.dat products.dat seed ${DB}/*.dat

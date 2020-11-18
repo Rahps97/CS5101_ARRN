@@ -5,6 +5,7 @@
 #include "headers/login.h"
 #include "headers/db.h"
 #include "headers/addproducts.h"
+#include "headers/interface.h"
 
 int main(void)
 {
@@ -12,10 +13,20 @@ int main(void)
     //login("nick", "nick");
     //usersdata();
     //system("clear");
-    addProducts();
-    printf("Here\n");
-    int id;
-    id=getid("products");
-    printf("From main: %d\n", id);
+    //addProducts();
+    //printf("Here\n");
+    //int id;
+    //id=getid("products");
+    //printf("From main: %d\n", id);
+    if(main_interface()==1) {
+        login_interface();
+        //login("akash", "akash");
+    } else if(main_interface()==2) {
+        //regi();
+        register_interface();
+    } else {
+        printf("Invalid input.");
+        exit(1);
+    }
     return 1;
 }
