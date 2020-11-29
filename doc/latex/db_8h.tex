@@ -1,0 +1,343 @@
+\hypertarget{db_8h}{}\doxysection{src/headers/db.h File Reference}
+\label{db_8h}\index{src/headers/db.h@{src/headers/db.h}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structusers}{users}} \mbox{\hyperlink{db_8h_a580049fdb91b03fd9a021f5ea2002715}{readusers}} (int id)
+\begin{DoxyCompactList}\small\item\em Authored By\+: \mbox{\hyperlink{contributors_contributorsniku}{Niku Nitin}}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structproducts}{products}} \mbox{\hyperlink{db_8h_a8b0ca8fa43d20301cf48d7627f89a65b}{readproducts}} (int id)
+\begin{DoxyCompactList}\small\item\em Authored By\+: \mbox{\hyperlink{contributors_contributorsniku}{Niku Nitin}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{db_8h_ae829784319afa4f3655481df764ebf82}{writeusers}} (struct \mbox{\hyperlink{structusers}{users}} input)
+\begin{DoxyCompactList}\small\item\em Authored By\+: \mbox{\hyperlink{contributors_contributorsniku}{Niku Nitin}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{db_8h_a1e5a3166ea3591b13d66cf247dc3830e}{writeproducts}} (struct \mbox{\hyperlink{structproducts}{products}} input)
+\begin{DoxyCompactList}\small\item\em Authored By\+: \mbox{\hyperlink{contributors_contributorsniku}{Niku Nitin}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{db_8h_af0544702083bea04f4c9467a6222a1e0}{usersdata}} ()
+\begin{DoxyCompactList}\small\item\em Authored By\+: \mbox{\hyperlink{contributors_contributorsniku}{Niku Nitin}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{db_8h_ae9f2da5ba8e3f27a0034c06b70475efc}{productsdata}} ()
+\begin{DoxyCompactList}\small\item\em Authored By\+: \mbox{\hyperlink{contributors_contributorsniku}{Niku Nitin}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{db_8h_aa454a189d5e6ab2096d2008a4b5a33ca}{getid}} (char target\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Authored By\+: \mbox{\hyperlink{contributors_contributorsniku}{Niku Nitin}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{db_8h_a278628720116198121d8cfba80a8d53b}{writesession}} (struct \mbox{\hyperlink{structusers}{users}} input)
+\begin{DoxyCompactList}\small\item\em Authored By\+: \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structusers}{users}} \mbox{\hyperlink{db_8h_a2e82b95b413593de8622ddd63a82f1d5}{readsession}} ()
+\begin{DoxyCompactList}\small\item\em Authored By\+: \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{db_8h_a7f398185219b3ab5b6c4adfb002012ac}{writecart}} (struct \mbox{\hyperlink{structproducts}{products}} input)
+\begin{DoxyCompactList}\small\item\em Authored By\+: @contributorsrohit. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structproducts}{products}} \mbox{\hyperlink{db_8h_a34e0beec9f9e548ec05775fabb5fc23e}{readcart}} (int id)
+\begin{DoxyCompactList}\small\item\em Authored By\+: @contributorsrohit. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{db_8h_a5fb49e684ade8cf7168d556554e759f8}{searchproducts}} (char keyword\mbox{[}$\,$\mbox{]}, int $\ast$p)
+\begin{DoxyCompactList}\small\item\em Authored By\+: @contributorsrahul. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{db_8h_a26af8d85efd3dce9709d8df434e9a173}{to\+Lower}} (char $\ast$s)
+\begin{DoxyCompactList}\small\item\em Authored By\+: @contributorsrahul. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{db_8h_aa454a189d5e6ab2096d2008a4b5a33ca}\label{db_8h_aa454a189d5e6ab2096d2008a4b5a33ca}} 
+\index{db.h@{db.h}!getid@{getid}}
+\index{getid@{getid}!db.h@{db.h}}
+\doxysubsubsection{\texorpdfstring{getid()}{getid()}}
+{\footnotesize\ttfamily int getid (\begin{DoxyParamCaption}\item[{char}]{target\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Authored By\+: \mbox{\hyperlink{contributors_contributorsniku}{Niku Nitin}}. 
+
+This function returns the no of entries in a database 
+\begin{DoxyParams}{Parameters}
+{\em target} & Database table name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns integer count of number of entries 
+\end{DoxyReturn}
+
+
+Definition at line 194 of file db.\+c.
+
+\mbox{\Hypertarget{db_8h_ae9f2da5ba8e3f27a0034c06b70475efc}\label{db_8h_ae9f2da5ba8e3f27a0034c06b70475efc}} 
+\index{db.h@{db.h}!productsdata@{productsdata}}
+\index{productsdata@{productsdata}!db.h@{db.h}}
+\doxysubsubsection{\texorpdfstring{productsdata()}{productsdata()}}
+{\footnotesize\ttfamily void productsdata (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Authored By\+: \mbox{\hyperlink{contributors_contributorsniku}{Niku Nitin}}. 
+
+This function generates dummy products data for application testing. Dummy data can be view here \mbox{\hyperlink{data}{Dummy Data}} \begin{DoxyReturn}{Returns}
+Returns void 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{structproducts}{products}} \mbox{\hyperlink{data}{Dummy Data}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 154 of file db.\+c.
+
+\mbox{\Hypertarget{db_8h_a34e0beec9f9e548ec05775fabb5fc23e}\label{db_8h_a34e0beec9f9e548ec05775fabb5fc23e}} 
+\index{db.h@{db.h}!readcart@{readcart}}
+\index{readcart@{readcart}!db.h@{db.h}}
+\doxysubsubsection{\texorpdfstring{readcart()}{readcart()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structproducts}{products}} readcart (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Authored By\+: @contributorsrohit. 
+
+This function reads cart data from database 
+\begin{DoxyParams}{Parameters}
+{\em id} & of product whose data is saved in cart \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns product struct data 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{structproducts}{products}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 283 of file db.\+c.
+
+\mbox{\Hypertarget{db_8h_a8b0ca8fa43d20301cf48d7627f89a65b}\label{db_8h_a8b0ca8fa43d20301cf48d7627f89a65b}} 
+\index{db.h@{db.h}!readproducts@{readproducts}}
+\index{readproducts@{readproducts}!db.h@{db.h}}
+\doxysubsubsection{\texorpdfstring{readproducts()}{readproducts()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structproducts}{products}} readproducts (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Authored By\+: \mbox{\hyperlink{contributors_contributorsniku}{Niku Nitin}}. 
+
+This function takes an integer as an argument and returns struct products data of user of given id. 
+\begin{DoxyParams}{Parameters}
+{\em id} & Id of the product \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns strut data of the product of given id. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{structproducts}{products}} \mbox{\hyperlink{db_8h_aa454a189d5e6ab2096d2008a4b5a33ca}{getid()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1 of file db.\+c.
+
+\mbox{\Hypertarget{db_8h_a2e82b95b413593de8622ddd63a82f1d5}\label{db_8h_a2e82b95b413593de8622ddd63a82f1d5}} 
+\index{db.h@{db.h}!readsession@{readsession}}
+\index{readsession@{readsession}!db.h@{db.h}}
+\doxysubsubsection{\texorpdfstring{readsession()}{readsession()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structusers}{users}} readsession (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Authored By\+: \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. 
+
+This function reads session data from database \begin{DoxyReturn}{Returns}
+Returns authorized user\textquotesingle{}s struct data 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{structusers}{users}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 242 of file db.\+c.
+
+\mbox{\Hypertarget{db_8h_a580049fdb91b03fd9a021f5ea2002715}\label{db_8h_a580049fdb91b03fd9a021f5ea2002715}} 
+\index{db.h@{db.h}!readusers@{readusers}}
+\index{readusers@{readusers}!db.h@{db.h}}
+\doxysubsubsection{\texorpdfstring{readusers()}{readusers()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structusers}{users}} readusers (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Authored By\+: \mbox{\hyperlink{contributors_contributorsniku}{Niku Nitin}}. 
+
+This function takes an integer as an argument and returns struct users data of user of given id. 
+\begin{DoxyParams}{Parameters}
+{\em id} & Id of the user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns strut data of the user of given id. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{structusers}{users}} \mbox{\hyperlink{db_8h_aa454a189d5e6ab2096d2008a4b5a33ca}{getid()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1 of file db.\+c.
+
+\mbox{\Hypertarget{db_8h_a5fb49e684ade8cf7168d556554e759f8}\label{db_8h_a5fb49e684ade8cf7168d556554e759f8}} 
+\index{db.h@{db.h}!searchproducts@{searchproducts}}
+\index{searchproducts@{searchproducts}!db.h@{db.h}}
+\doxysubsubsection{\texorpdfstring{searchproducts()}{searchproducts()}}
+{\footnotesize\ttfamily int searchproducts (\begin{DoxyParamCaption}\item[{char}]{keyword\mbox{[}$\,$\mbox{]},  }\item[{int $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Authored By\+: @contributorsrahul. 
+
+This function takes a keyword as input and returns matching entries from product database 
+\begin{DoxyParams}{Parameters}
+{\em keyword} & Search products database against the keyword for a match \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{db_8h_aa454a189d5e6ab2096d2008a4b5a33ca}{getid()}} \mbox{\hyperlink{structusers}{users}} \mbox{\hyperlink{structproducts}{products}} \mbox{\hyperlink{db_8h_a26af8d85efd3dce9709d8df434e9a173}{to\+Lower()}} 
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+The second argument is the pointer variable to the array which will store the matched product\textquotesingle{}s ids. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+The pointer variable points to a static array whose size is hardcoded in source code and should be greater than total products count in database 
+\end{DoxyWarning}
+
+
+Definition at line 340 of file db.\+c.
+
+\mbox{\Hypertarget{db_8h_a26af8d85efd3dce9709d8df434e9a173}\label{db_8h_a26af8d85efd3dce9709d8df434e9a173}} 
+\index{db.h@{db.h}!toLower@{toLower}}
+\index{toLower@{toLower}!db.h@{db.h}}
+\doxysubsubsection{\texorpdfstring{toLower()}{toLower()}}
+{\footnotesize\ttfamily char$\ast$ to\+Lower (\begin{DoxyParamCaption}\item[{char $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Authored By\+: @contributorsrahul. 
+
+This function takes a character pointer as input and coverts it whole string to lowercase 
+\begin{DoxyParams}{Parameters}
+{\em s} & character pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns pointer variable of the string 
+\end{DoxyReturn}
+
+
+Definition at line 379 of file db.\+c.
+
+\mbox{\Hypertarget{db_8h_af0544702083bea04f4c9467a6222a1e0}\label{db_8h_af0544702083bea04f4c9467a6222a1e0}} 
+\index{db.h@{db.h}!usersdata@{usersdata}}
+\index{usersdata@{usersdata}!db.h@{db.h}}
+\doxysubsubsection{\texorpdfstring{usersdata()}{usersdata()}}
+{\footnotesize\ttfamily void usersdata (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Authored By\+: \mbox{\hyperlink{contributors_contributorsniku}{Niku Nitin}}. 
+
+This function generates dummy users data for application testing. Dummy data can be view here \mbox{\hyperlink{data}{Dummy Data}} \begin{DoxyReturn}{Returns}
+Returns void 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{structusers}{users}} \mbox{\hyperlink{data}{Dummy Data}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 123 of file db.\+c.
+
+\mbox{\Hypertarget{db_8h_a7f398185219b3ab5b6c4adfb002012ac}\label{db_8h_a7f398185219b3ab5b6c4adfb002012ac}} 
+\index{db.h@{db.h}!writecart@{writecart}}
+\index{writecart@{writecart}!db.h@{db.h}}
+\doxysubsubsection{\texorpdfstring{writecart()}{writecart()}}
+{\footnotesize\ttfamily int writecart (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structproducts}{products}}}]{input }\end{DoxyParamCaption})}
+
+
+
+Authored By\+: @contributorsrohit. 
+
+This function writes product\textquotesingle{}s data to cart 
+\begin{DoxyParams}{Parameters}
+{\em input} & product\textquotesingle{}s struct data to be added in cart \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 or 1. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{structproducts}{products}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 283 of file db.\+c.
+
+\mbox{\Hypertarget{db_8h_a1e5a3166ea3591b13d66cf247dc3830e}\label{db_8h_a1e5a3166ea3591b13d66cf247dc3830e}} 
+\index{db.h@{db.h}!writeproducts@{writeproducts}}
+\index{writeproducts@{writeproducts}!db.h@{db.h}}
+\doxysubsubsection{\texorpdfstring{writeproducts()}{writeproducts()}}
+{\footnotesize\ttfamily int writeproducts (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structproducts}{products}}}]{input }\end{DoxyParamCaption})}
+
+
+
+Authored By\+: \mbox{\hyperlink{contributors_contributorsniku}{Niku Nitin}}. 
+
+This function takes a product structure data as an argument and write this data in database. 
+\begin{DoxyParams}{Parameters}
+{\em input} & Product struture to write in database \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 or 1. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{structproducts}{products}} ~\newline
+ 
+\end{DoxySeeAlso}
+
+
+Definition at line 101 of file db.\+c.
+
+\mbox{\Hypertarget{db_8h_a278628720116198121d8cfba80a8d53b}\label{db_8h_a278628720116198121d8cfba80a8d53b}} 
+\index{db.h@{db.h}!writesession@{writesession}}
+\index{writesession@{writesession}!db.h@{db.h}}
+\doxysubsubsection{\texorpdfstring{writesession()}{writesession()}}
+{\footnotesize\ttfamily int writesession (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structusers}{users}}}]{input }\end{DoxyParamCaption})}
+
+
+
+Authored By\+: \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. 
+
+This function writes authorised user\textquotesingle{}s data in database 
+\begin{DoxyParams}{Parameters}
+{\em input} & authorised user\textquotesingle{}s struct data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 or 1. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{structusers}{users}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 242 of file db.\+c.
+
+\mbox{\Hypertarget{db_8h_ae829784319afa4f3655481df764ebf82}\label{db_8h_ae829784319afa4f3655481df764ebf82}} 
+\index{db.h@{db.h}!writeusers@{writeusers}}
+\index{writeusers@{writeusers}!db.h@{db.h}}
+\doxysubsubsection{\texorpdfstring{writeusers()}{writeusers()}}
+{\footnotesize\ttfamily int writeusers (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structusers}{users}}}]{input }\end{DoxyParamCaption})}
+
+
+
+Authored By\+: \mbox{\hyperlink{contributors_contributorsniku}{Niku Nitin}}. 
+
+This function takes an user structure data as an argument and write this data in database. 
+\begin{DoxyParams}{Parameters}
+{\em input} & User struture to write in database \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 or 1. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{structusers}{users}} ~\newline
+ 
+\end{DoxySeeAlso}
+
+
+Definition at line 73 of file db.\+c.
+

@@ -1,0 +1,51 @@
+.TH "src/headers/login.h" 3 "Sun Nov 29 2020" "Version v1.0" "CS5101-Mid Semester Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/headers/login.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBlogin\fP (char username[], char password[])"
+.br
+.RI "Authored By: Rahul Pratap Singh\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int login (char username[], char password[])"
+
+.PP
+Authored By: Rahul Pratap Singh\&. A single login function to login both users and admins\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIusername\fP The uniques username exiting in database 
+.br
+\fIpassword\fP The password matching against the username 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Returns 0(customer), 1(admin) or 2(invalid credentials)\&. 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBreadusers()\fP \fBwritesession()\fP \fBusers\fP 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+After login a file \fBsession\&.dat\fP is generated with authenticated users details\&. 
+.RE
+.PP
+
+.PP
+Definition at line 7 of file login\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CS5101-Mid Semester Project from the source code\&.

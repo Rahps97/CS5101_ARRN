@@ -1,0 +1,49 @@
+.TH "src/headers/edit.h" 3 "Sun Nov 29 2020" "Version v1.0" "CS5101-Mid Semester Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/headers/edit.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBeditproducts\fP (int id, struct \fBproducts\fP newData)"
+.br
+.RI "Authored By \fBRahul Pratap Singh\fP\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void editproducts (int id, struct \fBproducts\fP newData)"
+
+.PP
+Authored By \fBRahul Pratap Singh\fP\&. This function enables admin to edit produts in database 
+.PP
+\fBParameters\fP
+.RS 4
+\fIid\fP ID of the product to be edited @newData New struct data of the product 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBreadproducts()\fP \fBwriteproducts()\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+void 
+.RE
+.PP
+\fBWarning\fP
+.RS 4
+This function creates a temporary file to edit data and then removes that temp file\&. So this function may fail on windows system\&. 
+.RE
+.PP
+
+.PP
+Definition at line 7 of file edit\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CS5101-Mid Semester Project from the source code\&.

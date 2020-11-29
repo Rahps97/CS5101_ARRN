@@ -1,0 +1,92 @@
+.TH "src/main.c" 3 "Sun Nov 29 2020" "Version v1.0" "CS5101-Mid Semester Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/main.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include 'headers/register\&.h'\fP
+.br
+\fC#include 'headers/login\&.h'\fP
+.br
+\fC#include 'headers/db\&.h'\fP
+.br
+\fC#include 'headers/interface\&.h'\fP
+.br
+\fC#include 'headers/userstruct\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBreset_productsid_arr\fP (int *ptr, int size)"
+.br
+.RI "Authored By: \fBAkash Kumar Nigam\fP\&. "
+.ti -1c
+.RI "void \fBlogout\fP ()"
+.br
+.RI "Authored By: \fBAkash Kumar Nigam\fP\&. "
+.ti -1c
+.RI "int \fBmain\fP (void)"
+.br
+.RI "Authored By: \fBAkash Kumar Nigam\fP\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void logout ()"
+
+.PP
+Authored By: \fBAkash Kumar Nigam\fP\&. function to logout users: simply deletes and create new session file 
+.PP
+\fBReturns\fP
+.RS 4
+Returns void 
+.RE
+.PP
+
+.PP
+Definition at line 226 of file main\&.c\&.
+.SS "int main (void)"
+
+.PP
+Authored By: \fBAkash Kumar Nigam\fP\&. This is main function defining the flow of the application\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvoid\fP No parameters required 
+.RE
+.PP
+
+.PP
+Definition at line 20 of file main\&.c\&.
+.SS "int reset_productsid_arr (int * ptr, int size)"
+
+.PP
+Authored By: \fBAkash Kumar Nigam\fP\&. This function resets the searchResultIds Array 
+.PP
+\fBParameters\fP
+.RS 4
+\fIptr\fP Pointer avriable to searchResultIds Array 
+.br
+\fIsize\fP Size of static array searchResultIds Array 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Returns 0 
+.RE
+.PP
+
+.PP
+Definition at line 212 of file main\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CS5101-Mid Semester Project from the source code\&.

@@ -1,0 +1,38 @@
+\hypertarget{edit_8h}{}\doxysection{src/headers/edit.h File Reference}
+\label{edit_8h}\index{src/headers/edit.h@{src/headers/edit.h}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{edit_8h_a88692c4c926fe6eda3e38783daed9306}{editproducts}} (int id, struct \mbox{\hyperlink{structproducts}{products}} new\+Data)
+\begin{DoxyCompactList}\small\item\em Authored By \mbox{\hyperlink{contributors_contributorsrahul}{Rahul Pratap Singh}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{edit_8h_a88692c4c926fe6eda3e38783daed9306}\label{edit_8h_a88692c4c926fe6eda3e38783daed9306}} 
+\index{edit.h@{edit.h}!editproducts@{editproducts}}
+\index{editproducts@{editproducts}!edit.h@{edit.h}}
+\doxysubsubsection{\texorpdfstring{editproducts()}{editproducts()}}
+{\footnotesize\ttfamily void editproducts (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{struct \mbox{\hyperlink{structproducts}{products}}}]{new\+Data }\end{DoxyParamCaption})}
+
+
+
+Authored By \mbox{\hyperlink{contributors_contributorsrahul}{Rahul Pratap Singh}}. 
+
+This function enables admin to edit produts in database 
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the product to be edited @new\+Data New struct data of the product \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{db_8h_a8b0ca8fa43d20301cf48d7627f89a65b}{readproducts()}} \mbox{\hyperlink{db_8h_a1e5a3166ea3591b13d66cf247dc3830e}{writeproducts()}} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+This function creates a temporary file to edit data and then removes that temp file. So this function may fail on windows system. 
+\end{DoxyWarning}
+
+
+Definition at line 7 of file edit.\+c.
+

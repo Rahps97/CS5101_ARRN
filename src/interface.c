@@ -470,20 +470,10 @@ int admin_interface(struct users session, int *searchId, char *searchString)
             //printf("\n\n%s", searchString);
             reSt=2;
             break;
-            /*
-        case 3:
-            printf("View Cart");
-            reSt=3;
-            break;
-        case 4:
-            printf("checkout");
-            reSt=4;
-            break;
         case 5:
             reSt=5;
             printf("Logout");
             break;
-            */
         default:
             printf("Default");
             reSt=10;

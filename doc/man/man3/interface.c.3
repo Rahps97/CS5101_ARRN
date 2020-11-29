@@ -1,0 +1,301 @@
+.TH "src/interface.c" 3 "Sun Nov 29 2020" "Version v1.0" "CS5101-Mid Semester Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/interface.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+\fC#include 'headers/userstruct\&.h'\fP
+.br
+\fC#include 'headers/register\&.h'\fP
+.br
+\fC#include 'headers/login\&.h'\fP
+.br
+\fC#include 'headers/db\&.h'\fP
+.br
+\fC#include 'headers/interface\&.h'\fP
+.br
+\fC#include 'headers/edit\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBheader_interface\fP ()"
+.br
+.RI "Authored By \fBRohit Prasad\fP\&. "
+.ti -1c
+.RI "void \fBfooter_interface\fP ()"
+.br
+.RI "Authored By \fBRohit Prasad\fP\&. "
+.ti -1c
+.RI "char \fBgetDate\fP ()"
+.br
+.ti -1c
+.RI "int \fBynprompt\fP (char input[])"
+.br
+.RI "Authored By \fBAkash Kumar Nigam\fP\&. "
+.ti -1c
+.RI "int \fBmain_interface\fP ()"
+.br
+.RI "Authored By \fBRohit Prasad\fP\&. "
+.ti -1c
+.RI "int \fBlogin_interface\fP ()"
+.br
+.RI "Authored By \fBRohit Prasad\fP\&. "
+.ti -1c
+.RI "int \fBregister_interface\fP ()"
+.br
+.RI "Authored By \fBRohit Prasad\fP\&. "
+.ti -1c
+.RI "int \fBadmin_interface\fP (struct \fBusers\fP session, int *searchId, char *searchString)"
+.br
+.RI "Authored By \fBRohit Prasad\fP\&. "
+.ti -1c
+.RI "int \fBuser_interface\fP (int id, int *searchId, char *searchString)"
+.br
+.RI "Authored By \fBRohit Prasad\fP\&. "
+.ti -1c
+.RI "int \fBcart_interface\fP (struct \fBusers\fP session)"
+.br
+.RI "Authored By \fBRohit Prasad\fP\&. "
+.ti -1c
+.RI "void \fBbill_interface\fP (struct \fBusers\fP session)"
+.br
+.RI "Authored By \fBRohit Prasad\fP\&. "
+.ti -1c
+.RI "int \fBproduct_search_result_interface\fP (int *ptr, int size)"
+.br
+.RI "Authored By \fBRohit Prasad\fP\&. "
+.ti -1c
+.RI "int \fBedit_product_interface\fP (struct \fBproducts\fP input)"
+.br
+.RI "Authored By \fBRohit Prasad\fP\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int admin_interface (struct \fBusers\fP session, int * searchId, char * searchString)"
+
+.PP
+Authored By \fBRohit Prasad\fP\&. This is the interface for admin with options such as add, editproducts 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsession\fP Authorised user's struct data 
+.br
+\fIsearchId\fP Pointer to a variable for searching products by their IDs 
+.br
+\fIsearchString\fP Pointer to a variable for searching products by any search string 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Return an integer which is user's input 
+.RE
+.PP
+
+.PP
+Definition at line 375 of file interface\&.c\&.
+.SS "void bill_interface (struct \fBusers\fP session)"
+
+.PP
+Authored By \fBRohit Prasad\fP\&. This is the interface for to view bill/invoice 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsession\fP Authorised user's struct data 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Return an integer which is user's input 
+.RE
+.PP
+
+.PP
+Definition at line 744 of file interface\&.c\&.
+.SS "int cart_interface (struct \fBusers\fP session)"
+
+.PP
+Authored By \fBRohit Prasad\fP\&. This is the interface for to view cart data 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsession\fP Authorised user's struct data 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Return an integer which is user's input 
+.RE
+.PP
+
+.PP
+Definition at line 607 of file interface\&.c\&.
+.SS "int edit_product_interface (struct \fBproducts\fP input)"
+
+.PP
+Authored By \fBRohit Prasad\fP\&. This is the interface which allows admin to edit products 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP Struct data of product which needs to be edited 
+.RE
+.PP
+
+.PP
+Definition at line 976 of file interface\&.c\&.
+.SS "void footer_interface ()"
+
+.PP
+Authored By \fBRohit Prasad\fP\&. This function prints the header part of the interface 
+.PP
+\fBReturns\fP
+.RS 4
+Returns void 
+.RE
+.PP
+
+.PP
+Definition at line 19 of file interface\&.c\&.
+.SS "char getDate ()"
+
+.PP
+Definition at line 24 of file interface\&.c\&.
+.SS "void header_interface ()"
+
+.PP
+Authored By \fBRohit Prasad\fP\&. This function prints the header part of the interface 
+.PP
+\fBReturns\fP
+.RS 4
+Returns void 
+.RE
+.PP
+
+.PP
+Definition at line 13 of file interface\&.c\&.
+.SS "int login_interface ()"
+
+.PP
+Authored By \fBRohit Prasad\fP\&. This is login interface of the application prompting user for username and password 
+.PP
+\fBReturns\fP
+.RS 4
+Return an integer which is user's input 
+.RE
+.PP
+
+.PP
+Definition at line 81 of file interface\&.c\&.
+.SS "int main_interface ()"
+
+.PP
+Authored By \fBRohit Prasad\fP\&. This is the main interface of the application asking for Sign In or Sign Up 
+.PP
+\fBReturns\fP
+.RS 4
+Return an integer which is user's input 
+.RE
+.PP
+
+.PP
+Definition at line 42 of file interface\&.c\&.
+.SS "int product_search_result_interface (int * ptr, int size)"
+
+.PP
+Authored By \fBRohit Prasad\fP\&. This is the interface which displays the product's search result 
+.PP
+\fBParameters\fP
+.RS 4
+\fIptr\fP A pointer variable which points to array of IDs of products which matches the user's search string 
+.br
+\fIsize\fP Size of static array which holds the IDs of products which match user's search string 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Return an integer which is user's input 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+This function also enables users to add products to cart and allow admin to edit product's values 
+.RE
+.PP
+
+.PP
+Definition at line 910 of file interface\&.c\&.
+.SS "int register_interface ()"
+
+.PP
+Authored By \fBRohit Prasad\fP\&. This is register interface of the application prompting user to register themselves to the application 
+.PP
+\fBReturns\fP
+.RS 4
+Return an integer which is user's input 
+.RE
+.PP
+
+.PP
+Definition at line 213 of file interface\&.c\&.
+.SS "int user_interface (int id, int * searchId, char * searchString)"
+
+.PP
+Authored By \fBRohit Prasad\fP\&. This is the interface for customer 
+.PP
+\fBParameters\fP
+.RS 4
+\fIid\fP Authorised user's id 
+.br
+\fIsearchId\fP Pointer to a variable for searching products by their IDs 
+.br
+\fIsearchString\fP Pointer to a variable for searching products by any search string 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Return an integer which is user's input 
+.RE
+.PP
+
+.PP
+Definition at line 484 of file interface\&.c\&.
+.SS "int ynprompt (char input[])"
+
+.PP
+Authored By \fBAkash Kumar Nigam\fP\&. This function check users reply as yes or no 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP Takes user character input 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Returns 0 or 1 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+Valid Input: Y, y, yes, no, n 
+.RE
+.PP
+
+.PP
+Definition at line 33 of file interface\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CS5101-Mid Semester Project from the source code\&.

@@ -1,0 +1,352 @@
+.TH "src/headers/db.h" 3 "Sun Nov 29 2020" "Version v1.0" "CS5101-Mid Semester Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/headers/db.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "struct \fBusers\fP \fBreadusers\fP (int id)"
+.br
+.RI "Authored By: \fBNiku Nitin\fP\&. "
+.ti -1c
+.RI "struct \fBproducts\fP \fBreadproducts\fP (int id)"
+.br
+.RI "Authored By: \fBNiku Nitin\fP\&. "
+.ti -1c
+.RI "int \fBwriteusers\fP (struct \fBusers\fP input)"
+.br
+.RI "Authored By: \fBNiku Nitin\fP\&. "
+.ti -1c
+.RI "int \fBwriteproducts\fP (struct \fBproducts\fP input)"
+.br
+.RI "Authored By: \fBNiku Nitin\fP\&. "
+.ti -1c
+.RI "void \fBusersdata\fP ()"
+.br
+.RI "Authored By: \fBNiku Nitin\fP\&. "
+.ti -1c
+.RI "void \fBproductsdata\fP ()"
+.br
+.RI "Authored By: \fBNiku Nitin\fP\&. "
+.ti -1c
+.RI "int \fBgetid\fP (char target[])"
+.br
+.RI "Authored By: \fBNiku Nitin\fP\&. "
+.ti -1c
+.RI "int \fBwritesession\fP (struct \fBusers\fP input)"
+.br
+.RI "Authored By: \fBRohit Prasad\fP\&. "
+.ti -1c
+.RI "struct \fBusers\fP \fBreadsession\fP ()"
+.br
+.RI "Authored By: \fBRohit Prasad\fP\&. "
+.ti -1c
+.RI "int \fBwritecart\fP (struct \fBproducts\fP input)"
+.br
+.RI "Authored By: @contributorsrohit\&. "
+.ti -1c
+.RI "struct \fBproducts\fP \fBreadcart\fP (int id)"
+.br
+.RI "Authored By: @contributorsrohit\&. "
+.ti -1c
+.RI "int \fBsearchproducts\fP (char keyword[], int *p)"
+.br
+.RI "Authored By: @contributorsrahul\&. "
+.ti -1c
+.RI "char * \fBtoLower\fP (char *s)"
+.br
+.RI "Authored By: @contributorsrahul\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int getid (char target[])"
+
+.PP
+Authored By: \fBNiku Nitin\fP\&. This function returns the no of entries in a database 
+.PP
+\fBParameters\fP
+.RS 4
+\fItarget\fP Database table name 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Returns integer count of number of entries 
+.RE
+.PP
+
+.PP
+Definition at line 194 of file db\&.c\&.
+.SS "void productsdata ()"
+
+.PP
+Authored By: \fBNiku Nitin\fP\&. This function generates dummy products data for application testing\&. Dummy data can be view here \fBDummy Data\fP 
+.PP
+\fBReturns\fP
+.RS 4
+Returns void 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBproducts\fP \fBDummy Data\fP 
+.RE
+.PP
+
+.PP
+Definition at line 154 of file db\&.c\&.
+.SS "struct \fBproducts\fP readcart (int id)"
+
+.PP
+Authored By: @contributorsrohit\&. This function reads cart data from database 
+.PP
+\fBParameters\fP
+.RS 4
+\fIid\fP of product whose data is saved in cart 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Returns product struct data 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBproducts\fP 
+.RE
+.PP
+
+.PP
+Definition at line 283 of file db\&.c\&.
+.SS "struct \fBproducts\fP readproducts (int id)"
+
+.PP
+Authored By: \fBNiku Nitin\fP\&. This function takes an integer as an argument and returns struct products data of user of given id\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIid\fP Id of the product 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Returns strut data of the product of given id\&. 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBproducts\fP \fBgetid()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1 of file db\&.c\&.
+.SS "struct \fBusers\fP readsession ()"
+
+.PP
+Authored By: \fBRohit Prasad\fP\&. This function reads session data from database 
+.PP
+\fBReturns\fP
+.RS 4
+Returns authorized user's struct data 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBusers\fP 
+.RE
+.PP
+
+.PP
+Definition at line 242 of file db\&.c\&.
+.SS "struct \fBusers\fP readusers (int id)"
+
+.PP
+Authored By: \fBNiku Nitin\fP\&. This function takes an integer as an argument and returns struct users data of user of given id\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIid\fP Id of the user 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Returns strut data of the user of given id\&. 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBusers\fP \fBgetid()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1 of file db\&.c\&.
+.SS "int searchproducts (char keyword[], int * p)"
+
+.PP
+Authored By: @contributorsrahul\&. This function takes a keyword as input and returns matching entries from product database 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkeyword\fP Search products database against the keyword for a match 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBgetid()\fP \fBusers\fP \fBproducts\fP \fBtoLower()\fP 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+The second argument is the pointer variable to the array which will store the matched product's ids\&. 
+.RE
+.PP
+\fBWarning\fP
+.RS 4
+The pointer variable points to a static array whose size is hardcoded in source code and should be greater than total products count in database 
+.RE
+.PP
+
+.PP
+Definition at line 340 of file db\&.c\&.
+.SS "char* toLower (char * s)"
+
+.PP
+Authored By: @contributorsrahul\&. This function takes a character pointer as input and coverts it whole string to lowercase 
+.PP
+\fBParameters\fP
+.RS 4
+\fIs\fP character pointer 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Returns pointer variable of the string 
+.RE
+.PP
+
+.PP
+Definition at line 379 of file db\&.c\&.
+.SS "void usersdata ()"
+
+.PP
+Authored By: \fBNiku Nitin\fP\&. This function generates dummy users data for application testing\&. Dummy data can be view here \fBDummy Data\fP 
+.PP
+\fBReturns\fP
+.RS 4
+Returns void 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBusers\fP \fBDummy Data\fP 
+.RE
+.PP
+
+.PP
+Definition at line 123 of file db\&.c\&.
+.SS "int writecart (struct \fBproducts\fP input)"
+
+.PP
+Authored By: @contributorsrohit\&. This function writes product's data to cart 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP product's struct data to be added in cart 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Returns 0 or 1\&. 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBproducts\fP 
+.RE
+.PP
+
+.PP
+Definition at line 283 of file db\&.c\&.
+.SS "int writeproducts (struct \fBproducts\fP input)"
+
+.PP
+Authored By: \fBNiku Nitin\fP\&. This function takes a product structure data as an argument and write this data in database\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP Product struture to write in database 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Returns 0 or 1\&. 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBproducts\fP 
+.br
+ 
+.RE
+.PP
+
+.PP
+Definition at line 101 of file db\&.c\&.
+.SS "int writesession (struct \fBusers\fP input)"
+
+.PP
+Authored By: \fBRohit Prasad\fP\&. This function writes authorised user's data in database 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP authorised user's struct data 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Returns 0 or 1\&. 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBusers\fP 
+.RE
+.PP
+
+.PP
+Definition at line 242 of file db\&.c\&.
+.SS "int writeusers (struct \fBusers\fP input)"
+
+.PP
+Authored By: \fBNiku Nitin\fP\&. This function takes an user structure data as an argument and write this data in database\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinput\fP User struture to write in database 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Returns 0 or 1\&. 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBusers\fP 
+.br
+ 
+.RE
+.PP
+
+.PP
+Definition at line 73 of file db\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CS5101-Mid Semester Project from the source code\&.

@@ -1,0 +1,44 @@
+\hypertarget{login_8c}{}\doxysection{src/lib/users/login.c File Reference}
+\label{login_8c}\index{src/lib/users/login.c@{src/lib/users/login.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../../headers/db.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../headers/userstruct.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{login_8c_a42ce7efbbf8a7badba6324da6918f404}{login}} (char username\mbox{[}$\,$\mbox{]}, char password\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Authored By\+: Rahul Pratap Singh. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{login_8c_a42ce7efbbf8a7badba6324da6918f404}\label{login_8c_a42ce7efbbf8a7badba6324da6918f404}} 
+\index{login.c@{login.c}!login@{login}}
+\index{login@{login}!login.c@{login.c}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily int login (\begin{DoxyParamCaption}\item[{char}]{username\mbox{[}$\,$\mbox{]},  }\item[{char}]{password\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Authored By\+: Rahul Pratap Singh. 
+
+A single login function to login both users and admins. 
+\begin{DoxyParams}{Parameters}
+{\em username} & The uniques username exiting in database \\
+\hline
+{\em password} & The password matching against the username \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0(customer), 1(admin) or 2(invalid credentials). 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{db_8h_a580049fdb91b03fd9a021f5ea2002715}{readusers()}} \mbox{\hyperlink{db_8h_a278628720116198121d8cfba80a8d53b}{writesession()}} \mbox{\hyperlink{structusers}{users}} 
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+After login a file {\bfseries{session.\+dat}} is generated with authenticated users details. 
+\end{DoxyNote}
+
+
+Definition at line 7 of file login.\+c.
+

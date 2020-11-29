@@ -1,0 +1,43 @@
+\hypertarget{edit_8c}{}\doxysection{src/lib/products/edit.c File Reference}
+\label{edit_8c}\index{src/lib/products/edit.c@{src/lib/products/edit.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../../headers/userstruct.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../headers/db.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../headers/edit.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{edit_8c_a88692c4c926fe6eda3e38783daed9306}{editproducts}} (int id, struct \mbox{\hyperlink{structproducts}{products}} new\+Data)
+\begin{DoxyCompactList}\small\item\em Authored By \mbox{\hyperlink{contributors_contributorsrahul}{Rahul Pratap Singh}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{edit_8c_a88692c4c926fe6eda3e38783daed9306}\label{edit_8c_a88692c4c926fe6eda3e38783daed9306}} 
+\index{edit.c@{edit.c}!editproducts@{editproducts}}
+\index{editproducts@{editproducts}!edit.c@{edit.c}}
+\doxysubsubsection{\texorpdfstring{editproducts()}{editproducts()}}
+{\footnotesize\ttfamily void editproducts (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{struct \mbox{\hyperlink{structproducts}{products}}}]{new\+Data }\end{DoxyParamCaption})}
+
+
+
+Authored By \mbox{\hyperlink{contributors_contributorsrahul}{Rahul Pratap Singh}}. 
+
+This function enables admin to edit produts in database 
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the product to be edited @new\+Data New struct data of the product \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{db_8h_a8b0ca8fa43d20301cf48d7627f89a65b}{readproducts()}} \mbox{\hyperlink{db_8h_a1e5a3166ea3591b13d66cf247dc3830e}{writeproducts()}} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+This function creates a temporary file to edit data and then removes that temp file. So this function may fail on windows system. 
+\end{DoxyWarning}
+
+
+Definition at line 7 of file edit.\+c.
+

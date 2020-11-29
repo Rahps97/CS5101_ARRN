@@ -1,0 +1,49 @@
+\hypertarget{register_8c}{}\doxysection{src/lib/users/register.c File Reference}
+\label{register_8c}\index{src/lib/users/register.c@{src/lib/users/register.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../../headers/db.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../headers/userstruct.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{register_8c_ab679d6b819afecc9dad584f93dd52e95}{regi}} (char fname\mbox{[}$\,$\mbox{]}, char lname\mbox{[}$\,$\mbox{]}, char username\mbox{[}$\,$\mbox{]}, char password\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Authored By\+: Rahul Pratap Singh. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{register_8c_ab679d6b819afecc9dad584f93dd52e95}\label{register_8c_ab679d6b819afecc9dad584f93dd52e95}} 
+\index{register.c@{register.c}!regi@{regi}}
+\index{regi@{regi}!register.c@{register.c}}
+\doxysubsubsection{\texorpdfstring{regi()}{regi()}}
+{\footnotesize\ttfamily int regi (\begin{DoxyParamCaption}\item[{char}]{fname\mbox{[}$\,$\mbox{]},  }\item[{char}]{lname\mbox{[}$\,$\mbox{]},  }\item[{char}]{username\mbox{[}$\,$\mbox{]},  }\item[{char}]{password\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Authored By\+: Rahul Pratap Singh. 
+
+This function adds a new user to the database and automatically granting access to application. 
+\begin{DoxyParams}{Parameters}
+{\em fname} & First Name of the user \\
+\hline
+{\em lname} & Last Name of the user \\
+\hline
+{\em username} & Uniques username for the registration \\
+\hline
+{\em password} & A strong pasword that can be later used for logging in application \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an integer i.\+e. 0 or 1. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{structusers}{users}} \mbox{\hyperlink{db_8h_aa454a189d5e6ab2096d2008a4b5a33ca}{getid()}} \mbox{\hyperlink{db_8h_ae829784319afa4f3655481df764ebf82}{writeusers()}} 
+\end{DoxySeeAlso}
+\begin{DoxyAttention}{Attention}
+This function cannot be used for registering an Admin. Admin credentials are hard coded in the source file. 
+\end{DoxyAttention}
+
+
+Definition at line 7 of file register.\+c.
+

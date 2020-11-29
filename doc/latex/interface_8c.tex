@@ -1,0 +1,307 @@
+\hypertarget{interface_8c}{}\doxysection{src/interface.c File Reference}
+\label{interface_8c}\index{src/interface.c@{src/interface.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}headers/userstruct.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}headers/register.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}headers/login.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}headers/db.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}headers/interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}headers/edit.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interface_8c_aec61aa41201b8656c53c62d55f583b77}{header\+\_\+interface}} ()
+\begin{DoxyCompactList}\small\item\em Authored By \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_8c_a7f318cd52a42e78772853f61881a4195}{footer\+\_\+interface}} ()
+\begin{DoxyCompactList}\small\item\em Authored By \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{interface_8c_a55050d222a898957b4c35576b721e332}{get\+Date}} ()
+\item 
+int \mbox{\hyperlink{interface_8c_a28a1d0fae69d48ebf9d2c832bc6b8773}{ynprompt}} (char input\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Authored By \mbox{\hyperlink{contributors_contributorsakash}{Akash Kumar Nigam}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{interface_8c_a71ba4a6487eebc50e85ffa378eb9040c}{main\+\_\+interface}} ()
+\begin{DoxyCompactList}\small\item\em Authored By \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{interface_8c_a21f2e1b7e93785bb8f2b4387fd43b830}{login\+\_\+interface}} ()
+\begin{DoxyCompactList}\small\item\em Authored By \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{interface_8c_af711de68416cf982dfa84908cb167566}{register\+\_\+interface}} ()
+\begin{DoxyCompactList}\small\item\em Authored By \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{interface_8c_ab71da6c86f645c9262a7ec762b24e1d3}{admin\+\_\+interface}} (struct \mbox{\hyperlink{structusers}{users}} session, int $\ast$search\+Id, char $\ast$search\+String)
+\begin{DoxyCompactList}\small\item\em Authored By \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{interface_8c_ae460520c02521fc2dd7b08398db0357e}{user\+\_\+interface}} (int id, int $\ast$search\+Id, char $\ast$search\+String)
+\begin{DoxyCompactList}\small\item\em Authored By \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{interface_8c_a70d8340b9530b52bf25b69d573d58638}{cart\+\_\+interface}} (struct \mbox{\hyperlink{structusers}{users}} session)
+\begin{DoxyCompactList}\small\item\em Authored By \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_8c_afa1c6ad80c96f03e28554ec2bb6d7579}{bill\+\_\+interface}} (struct \mbox{\hyperlink{structusers}{users}} session)
+\begin{DoxyCompactList}\small\item\em Authored By \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{interface_8c_a1b21c38909db44c61bb972e1ebcd80fb}{product\+\_\+search\+\_\+result\+\_\+interface}} (int $\ast$ptr, int size)
+\begin{DoxyCompactList}\small\item\em Authored By \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{interface_8c_aef430c6e4d4f298c355d68d8597ac868}{edit\+\_\+product\+\_\+interface}} (struct \mbox{\hyperlink{structproducts}{products}} input)
+\begin{DoxyCompactList}\small\item\em Authored By \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{interface_8c_ab71da6c86f645c9262a7ec762b24e1d3}\label{interface_8c_ab71da6c86f645c9262a7ec762b24e1d3}} 
+\index{interface.c@{interface.c}!admin\_interface@{admin\_interface}}
+\index{admin\_interface@{admin\_interface}!interface.c@{interface.c}}
+\doxysubsubsection{\texorpdfstring{admin\_interface()}{admin\_interface()}}
+{\footnotesize\ttfamily int admin\+\_\+interface (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structusers}{users}}}]{session,  }\item[{int $\ast$}]{search\+Id,  }\item[{char $\ast$}]{search\+String }\end{DoxyParamCaption})}
+
+
+
+Authored By \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. 
+
+This is the interface for admin with options such as add, editproducts 
+\begin{DoxyParams}{Parameters}
+{\em session} & Authorised user\textquotesingle{}s struct data \\
+\hline
+{\em search\+Id} & Pointer to a variable for searching products by their I\+Ds \\
+\hline
+{\em search\+String} & Pointer to a variable for searching products by any search string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return an integer which is user\textquotesingle{}s input 
+\end{DoxyReturn}
+
+
+Definition at line 375 of file interface.\+c.
+
+\mbox{\Hypertarget{interface_8c_afa1c6ad80c96f03e28554ec2bb6d7579}\label{interface_8c_afa1c6ad80c96f03e28554ec2bb6d7579}} 
+\index{interface.c@{interface.c}!bill\_interface@{bill\_interface}}
+\index{bill\_interface@{bill\_interface}!interface.c@{interface.c}}
+\doxysubsubsection{\texorpdfstring{bill\_interface()}{bill\_interface()}}
+{\footnotesize\ttfamily void bill\+\_\+interface (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structusers}{users}}}]{session }\end{DoxyParamCaption})}
+
+
+
+Authored By \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. 
+
+This is the interface for to view bill/invoice 
+\begin{DoxyParams}{Parameters}
+{\em session} & Authorised user\textquotesingle{}s struct data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return an integer which is user\textquotesingle{}s input 
+\end{DoxyReturn}
+
+
+Definition at line 744 of file interface.\+c.
+
+\mbox{\Hypertarget{interface_8c_a70d8340b9530b52bf25b69d573d58638}\label{interface_8c_a70d8340b9530b52bf25b69d573d58638}} 
+\index{interface.c@{interface.c}!cart\_interface@{cart\_interface}}
+\index{cart\_interface@{cart\_interface}!interface.c@{interface.c}}
+\doxysubsubsection{\texorpdfstring{cart\_interface()}{cart\_interface()}}
+{\footnotesize\ttfamily int cart\+\_\+interface (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structusers}{users}}}]{session }\end{DoxyParamCaption})}
+
+
+
+Authored By \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. 
+
+This is the interface for to view cart data 
+\begin{DoxyParams}{Parameters}
+{\em session} & Authorised user\textquotesingle{}s struct data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return an integer which is user\textquotesingle{}s input 
+\end{DoxyReturn}
+
+
+Definition at line 607 of file interface.\+c.
+
+\mbox{\Hypertarget{interface_8c_aef430c6e4d4f298c355d68d8597ac868}\label{interface_8c_aef430c6e4d4f298c355d68d8597ac868}} 
+\index{interface.c@{interface.c}!edit\_product\_interface@{edit\_product\_interface}}
+\index{edit\_product\_interface@{edit\_product\_interface}!interface.c@{interface.c}}
+\doxysubsubsection{\texorpdfstring{edit\_product\_interface()}{edit\_product\_interface()}}
+{\footnotesize\ttfamily int edit\+\_\+product\+\_\+interface (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structproducts}{products}}}]{input }\end{DoxyParamCaption})}
+
+
+
+Authored By \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. 
+
+This is the interface which allows admin to edit products 
+\begin{DoxyParams}{Parameters}
+{\em input} & Struct data of product which needs to be edited \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 976 of file interface.\+c.
+
+\mbox{\Hypertarget{interface_8c_a7f318cd52a42e78772853f61881a4195}\label{interface_8c_a7f318cd52a42e78772853f61881a4195}} 
+\index{interface.c@{interface.c}!footer\_interface@{footer\_interface}}
+\index{footer\_interface@{footer\_interface}!interface.c@{interface.c}}
+\doxysubsubsection{\texorpdfstring{footer\_interface()}{footer\_interface()}}
+{\footnotesize\ttfamily void footer\+\_\+interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Authored By \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. 
+
+This function prints the header part of the interface \begin{DoxyReturn}{Returns}
+Returns void 
+\end{DoxyReturn}
+
+
+Definition at line 19 of file interface.\+c.
+
+\mbox{\Hypertarget{interface_8c_a55050d222a898957b4c35576b721e332}\label{interface_8c_a55050d222a898957b4c35576b721e332}} 
+\index{interface.c@{interface.c}!getDate@{getDate}}
+\index{getDate@{getDate}!interface.c@{interface.c}}
+\doxysubsubsection{\texorpdfstring{getDate()}{getDate()}}
+{\footnotesize\ttfamily char get\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 24 of file interface.\+c.
+
+\mbox{\Hypertarget{interface_8c_aec61aa41201b8656c53c62d55f583b77}\label{interface_8c_aec61aa41201b8656c53c62d55f583b77}} 
+\index{interface.c@{interface.c}!header\_interface@{header\_interface}}
+\index{header\_interface@{header\_interface}!interface.c@{interface.c}}
+\doxysubsubsection{\texorpdfstring{header\_interface()}{header\_interface()}}
+{\footnotesize\ttfamily void header\+\_\+interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Authored By \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. 
+
+This function prints the header part of the interface \begin{DoxyReturn}{Returns}
+Returns void 
+\end{DoxyReturn}
+
+
+Definition at line 13 of file interface.\+c.
+
+\mbox{\Hypertarget{interface_8c_a21f2e1b7e93785bb8f2b4387fd43b830}\label{interface_8c_a21f2e1b7e93785bb8f2b4387fd43b830}} 
+\index{interface.c@{interface.c}!login\_interface@{login\_interface}}
+\index{login\_interface@{login\_interface}!interface.c@{interface.c}}
+\doxysubsubsection{\texorpdfstring{login\_interface()}{login\_interface()}}
+{\footnotesize\ttfamily int login\+\_\+interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Authored By \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. 
+
+This is login interface of the application prompting user for username and password \begin{DoxyReturn}{Returns}
+Return an integer which is user\textquotesingle{}s input 
+\end{DoxyReturn}
+
+
+Definition at line 81 of file interface.\+c.
+
+\mbox{\Hypertarget{interface_8c_a71ba4a6487eebc50e85ffa378eb9040c}\label{interface_8c_a71ba4a6487eebc50e85ffa378eb9040c}} 
+\index{interface.c@{interface.c}!main\_interface@{main\_interface}}
+\index{main\_interface@{main\_interface}!interface.c@{interface.c}}
+\doxysubsubsection{\texorpdfstring{main\_interface()}{main\_interface()}}
+{\footnotesize\ttfamily int main\+\_\+interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Authored By \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. 
+
+This is the main interface of the application asking for Sign In or Sign Up \begin{DoxyReturn}{Returns}
+Return an integer which is user\textquotesingle{}s input 
+\end{DoxyReturn}
+
+
+Definition at line 42 of file interface.\+c.
+
+\mbox{\Hypertarget{interface_8c_a1b21c38909db44c61bb972e1ebcd80fb}\label{interface_8c_a1b21c38909db44c61bb972e1ebcd80fb}} 
+\index{interface.c@{interface.c}!product\_search\_result\_interface@{product\_search\_result\_interface}}
+\index{product\_search\_result\_interface@{product\_search\_result\_interface}!interface.c@{interface.c}}
+\doxysubsubsection{\texorpdfstring{product\_search\_result\_interface()}{product\_search\_result\_interface()}}
+{\footnotesize\ttfamily int product\+\_\+search\+\_\+result\+\_\+interface (\begin{DoxyParamCaption}\item[{int $\ast$}]{ptr,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Authored By \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. 
+
+This is the interface which displays the product\textquotesingle{}s search result 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & A pointer variable which points to array of I\+Ds of products which matches the user\textquotesingle{}s search string \\
+\hline
+{\em size} & Size of static array which holds the I\+Ds of products which match user\textquotesingle{}s search string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return an integer which is user\textquotesingle{}s input 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function also enables users to add products to cart and allow admin to edit product\textquotesingle{}s values 
+\end{DoxyNote}
+
+
+Definition at line 910 of file interface.\+c.
+
+\mbox{\Hypertarget{interface_8c_af711de68416cf982dfa84908cb167566}\label{interface_8c_af711de68416cf982dfa84908cb167566}} 
+\index{interface.c@{interface.c}!register\_interface@{register\_interface}}
+\index{register\_interface@{register\_interface}!interface.c@{interface.c}}
+\doxysubsubsection{\texorpdfstring{register\_interface()}{register\_interface()}}
+{\footnotesize\ttfamily int register\+\_\+interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Authored By \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. 
+
+This is register interface of the application prompting user to register themselves to the application \begin{DoxyReturn}{Returns}
+Return an integer which is user\textquotesingle{}s input 
+\end{DoxyReturn}
+
+
+Definition at line 213 of file interface.\+c.
+
+\mbox{\Hypertarget{interface_8c_ae460520c02521fc2dd7b08398db0357e}\label{interface_8c_ae460520c02521fc2dd7b08398db0357e}} 
+\index{interface.c@{interface.c}!user\_interface@{user\_interface}}
+\index{user\_interface@{user\_interface}!interface.c@{interface.c}}
+\doxysubsubsection{\texorpdfstring{user\_interface()}{user\_interface()}}
+{\footnotesize\ttfamily int user\+\_\+interface (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int $\ast$}]{search\+Id,  }\item[{char $\ast$}]{search\+String }\end{DoxyParamCaption})}
+
+
+
+Authored By \mbox{\hyperlink{contributors_contributorsrohit}{Rohit Prasad}}. 
+
+This is the interface for customer 
+\begin{DoxyParams}{Parameters}
+{\em id} & Authorised user\textquotesingle{}s id \\
+\hline
+{\em search\+Id} & Pointer to a variable for searching products by their I\+Ds \\
+\hline
+{\em search\+String} & Pointer to a variable for searching products by any search string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return an integer which is user\textquotesingle{}s input 
+\end{DoxyReturn}
+
+
+Definition at line 484 of file interface.\+c.
+
+\mbox{\Hypertarget{interface_8c_a28a1d0fae69d48ebf9d2c832bc6b8773}\label{interface_8c_a28a1d0fae69d48ebf9d2c832bc6b8773}} 
+\index{interface.c@{interface.c}!ynprompt@{ynprompt}}
+\index{ynprompt@{ynprompt}!interface.c@{interface.c}}
+\doxysubsubsection{\texorpdfstring{ynprompt()}{ynprompt()}}
+{\footnotesize\ttfamily int ynprompt (\begin{DoxyParamCaption}\item[{char}]{input\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Authored By \mbox{\hyperlink{contributors_contributorsakash}{Akash Kumar Nigam}}. 
+
+This function check users reply as yes or no 
+\begin{DoxyParams}{Parameters}
+{\em input} & Takes user character input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 or 1 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Valid Input\+: Y, y, yes, no, n 
+\end{DoxyNote}
+
+
+Definition at line 33 of file interface.\+c.
+

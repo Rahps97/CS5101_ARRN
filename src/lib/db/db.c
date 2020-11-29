@@ -6,7 +6,6 @@
 #include "../../headers/db.h" //struct datatype for users and products
 
 
-char *toLower(char *s);
 
 /*
  * function to read users data from users.dat file
@@ -99,7 +98,7 @@ int writeusers(struct users input)
  * usage: refer documentation
  */
 
-void writeproducts(struct products input)
+int writeproducts(struct products input)
 {
     FILE *outfile;
 
@@ -114,11 +113,10 @@ void writeproducts(struct products input)
     if(fwrite != 0)
     {
         fclose(outfile);
-        printf("Data added Successfully\n");
+        return 0;
     } else {
         fclose(outfile);
-        printf("Fail\n");
-        exit(1);
+        return 1;
     }
 }
 
@@ -279,7 +277,6 @@ struct users readsession()
 
     fseek(infile, (id-1)*sizeof(struct users), 0);
     fread(&input, sizeof(struct users), 1, infile);
-    //printf("Users: %s %s\n", input.role, input.fname);
     return input;
 }
 
@@ -342,7 +339,6 @@ struct products readcart(int id)
 
 int searchproducts(char keyword[], int *p)
 {
-
     int i, count=0, productscount=getid("products");
 
     struct products outstruct;

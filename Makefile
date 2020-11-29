@@ -6,7 +6,7 @@ USERS=${DIR}/lib/users
 PRODUCTS=${DIR}/lib/products
 DB=${DIR}/lib/db
 HEADERS=${DIR}/headers
-OBS=register.o login.o db.o addproducts.o interface.o editproducts.o
+OBS=register.o login.o db.o interface.o editproducts.o
 
 # Main build
 main: main.o ${OBS} libtools.a
@@ -27,9 +27,6 @@ login.o: ${USERS}/login.c ${DB}/db.c ${HEADERS}/db.h ${HEADERS}/userstruct.h
 	gcc -c $<
 
 db.o: ${DB}/db.c ${HEADERS}/userstruct.h
-	gcc -c $<
-
-addproducts.o: ${PRODUCTS}/addproducts.c ${DB}/db.c ${HEADERS}/db.h ${HEADERS}/userstruct.h
 	gcc -c $<
 
 interface.o: ${DIR}/interface.c ${HEADERS}/interface.h
