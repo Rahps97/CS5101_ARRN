@@ -81,11 +81,14 @@ nnoremap tl :tablast
 nnoremap tj :tabprev
 nnoremap tk :tabnext
 nnoremap th :tabfirst
-nnoremap <SNR>74_: :=v:count ? v:count : ''
-nnoremap <SNR>79_: :=v:count ? v:count : ''
-nnoremap <Plug>(-fzf-vim-do) :execute g:__fzf_command
-nnoremap <Plug>(-fzf-/) /
+nnoremap <SNR>83_: :=v:count ? v:count : ''
+nnoremap <SNR>85_: :=v:count ? v:count : ''
 nnoremap <Plug>(-fzf-:) :
+nnoremap <Plug>(-fzf-/) /
+nnoremap <Plug>(-fzf-vim-do) :execute g:__fzf_command
+nnoremap <SNR>79_: :=v:count ? v:count : ''
+nnoremap <SNR>74_: :=v:count ? v:count : ''
+nnoremap <SNR>82_: :=v:count ? v:count : ''
 vnoremap <silent> <Plug>NetrwBrowseXVis :call netrw#BrowseXVis()
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))
 onoremap <silent> <Plug>(fzf-maps-o) :call fzf#vim#maps('o', 0)
@@ -219,7 +222,7 @@ endif
 set shortmess=aoO
 argglobal
 %argdel
-edit Makefile
+edit src/main.c
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -240,14 +243,14 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 19 + 20) / 40)
-exe 'vert 1resize ' . ((&columns * 75 + 75) / 151)
-exe '2resize ' . ((&lines * 18 + 20) / 40)
-exe 'vert 2resize ' . ((&columns * 75 + 75) / 151)
+exe '1resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 1resize ' . ((&columns * 70 + 75) / 151)
+exe '2resize ' . ((&lines * 19 + 20) / 40)
+exe 'vert 2resize ' . ((&columns * 70 + 75) / 151)
 exe '3resize ' . ((&lines * 19 + 20) / 40)
-exe 'vert 3resize ' . ((&columns * 75 + 75) / 151)
+exe 'vert 3resize ' . ((&columns * 80 + 75) / 151)
 exe '4resize ' . ((&lines * 18 + 20) / 40)
-exe 'vert 4resize ' . ((&columns * 75 + 75) / 151)
+exe 'vert 4resize ' . ((&columns * 80 + 75) / 151)
 argglobal
 setlocal keymap=
 setlocal noarabic
@@ -260,13 +263,13 @@ setlocal breakindentopt=
 setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
-setlocal nocindent
+setlocal cindent
 setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=sO:#\ -,mO:#\ \ ,b:#
-setlocal commentstring=#\ %s
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal commentstring=/*%s*/
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
 setlocal conceallevel=0
@@ -277,14 +280,14 @@ setlocal nocursorbind
 setlocal nocursorcolumn
 setlocal nocursorline
 setlocal cursorlineopt=both
-setlocal define=
+setlocal define=^\\s*#\\s*define
 setlocal dictionary=
 setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
-setlocal noexpandtab
-if &filetype != 'make'
-setlocal filetype=make
+setlocal expandtab
+if &filetype != 'c'
+setlocal filetype=c
 endif
 setlocal fixendofline
 setlocal foldcolumn=0
@@ -305,10 +308,10 @@ setlocal formatprg=
 setlocal grepprg=
 setlocal iminsert=0
 setlocal imsearch=-1
-setlocal include=^\\s*include
+setlocal include=^\\s*#\\s*include
 setlocal includeexpr=
-setlocal indentexpr=GetMakeIndent()
-setlocal indentkeys=!^F,o,O,<:>,=else,=endif
+setlocal indentexpr=
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
@@ -325,7 +328,7 @@ setlocal nrformats=bin,octal,hex
 set number
 setlocal number
 setlocal numberwidth=4
-setlocal omnifunc=
+setlocal omnifunc=ccomplete#Complete
 setlocal path=
 setlocal nopreserveindent
 setlocal nopreviewwindow
@@ -353,8 +356,8 @@ setlocal statusline=%!airline#statusline(1)
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != 'make'
-setlocal syntax=make
+if &syntax != 'c'
+setlocal syntax=c
 endif
 setlocal tabstop=4
 setlocal tagcase=
@@ -374,29 +377,67 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-9
+17
 normal! zo
-12
+28
 normal! zo
-15
+34
 normal! zo
-18
+36
 normal! zo
-27
+43
 normal! zo
-30
+46
 normal! zo
-39
+46
+normal! zc
+58
 normal! zo
-let s:l = 7 - ((6 * winheight(0) + 9) / 19)
+58
+normal! zc
+69
+normal! zo
+69
+normal! zc
+83
+normal! zo
+92
+normal! zo
+98
+normal! zo
+116
+normal! zo
+124
+normal! zo
+127
+normal! zo
+130
+normal! zo
+135
+normal! zo
+139
+normal! zo
+141
+normal! zo
+116
+normal! zc
+150
+normal! zo
+157
+normal! zo
+177
+normal! zo
+177
+normal! zc
+let s:l = 150 - ((52 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-7
-normal! 0
+150
+normal! 031|
 wincmd w
 argglobal
-if bufexists("src/main.c") | buffer src/main.c | else | edit src/main.c | endif
+if bufexists("src/lib/db/db.c") | buffer src/lib/db/db.c | else | edit src/lib/db/db.c | endif
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -522,23 +563,75 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-12
+18
 normal! zo
-22
+31
 normal! zo
-25
+47
 normal! zo
-27
+60
 normal! zo
-let s:l = 5 - ((4 * winheight(0) + 9) / 18)
+76
+normal! zo
+76
+normal! zc
+104
+normal! zo
+104
+normal! zc
+158
+normal! zo
+198
+normal! zo
+202
+normal! zo
+216
+normal! zo
+219
+normal! zo
+229
+normal! zo
+268
+normal! zo
+288
+normal! zo
+302
+normal! zo
+306
+normal! zo
+314
+normal! zo
+329
+normal! zo
+346
+normal! zo
+353
+normal! zo
+359
+normal! zo
+370
+normal! zo
+385
+normal! zo
+392
+normal! zo
+398
+normal! zo
+403
+normal! zo
+409
+normal! zo
+414
+normal! zo
+let s:l = 377 - ((0 * winheight(0) + 9) / 19)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-5
-normal! 02|
+377
+normal! 09|
 wincmd w
 argglobal
-if bufexists("src/headers/interface.h") | buffer src/headers/interface.h | else | edit src/headers/interface.h | endif
+if bufexists("src/lib/products/edit.c") | buffer src/lib/products/edit.c | else | edit src/lib/products/edit.c | endif
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -573,8 +666,8 @@ setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal expandtab
-if &filetype != 'cpp'
-setlocal filetype=cpp
+if &filetype != 'c'
+setlocal filetype=c
 endif
 setlocal fixendofline
 setlocal foldcolumn=0
@@ -643,8 +736,8 @@ setlocal statusline=%!airline#statusline(3)
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != 'cpp'
-setlocal syntax=cpp
+if &syntax != 'c'
+setlocal syntax=c
 endif
 setlocal tabstop=4
 setlocal tagcase=
@@ -664,15 +757,26 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 4 - ((3 * winheight(0) + 9) / 19)
+9
+normal! zo
+29
+normal! zo
+30
+normal! zo
+33
+normal! zo
+49
+normal! zo
+let s:l = 40 - ((11 * winheight(0) + 9) / 19)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-4
-normal! 06|
+40
+normal! 035|
+lcd ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce
 wincmd w
 argglobal
-if bufexists("src/interface.c") | buffer src/interface.c | else | edit src/interface.c | endif
+if bufexists("~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/src/interface.c") | buffer ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/src/interface.c | else | edit ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/src/interface.c | endif
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -798,31 +902,80 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-5
+35
 normal! zo
-let s:l = 33 - ((8 * winheight(0) + 9) / 18)
+35
+normal! zc
+83
+normal! zo
+215
+normal! zo
+377
+normal! zo
+465
+normal! zo
+466
+normal! zo
+473
+normal! zo
+481
+normal! zo
+494
+normal! zo
+617
+normal! zo
+754
+normal! zo
+920
+normal! zo
+962
+normal! zo
+962
+normal! zc
+977
+normal! zo
+986
+normal! zo
+1082
+normal! zo
+1084
+normal! zo
+let s:l = 1079 - ((10 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-33
-normal! 030|
+1079
+normal! 0
 wincmd w
-exe '1resize ' . ((&lines * 19 + 20) / 40)
-exe 'vert 1resize ' . ((&columns * 75 + 75) / 151)
-exe '2resize ' . ((&lines * 18 + 20) / 40)
-exe 'vert 2resize ' . ((&columns * 75 + 75) / 151)
+exe '1resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 1resize ' . ((&columns * 70 + 75) / 151)
+exe '2resize ' . ((&lines * 19 + 20) / 40)
+exe 'vert 2resize ' . ((&columns * 70 + 75) / 151)
 exe '3resize ' . ((&lines * 19 + 20) / 40)
-exe 'vert 3resize ' . ((&columns * 75 + 75) / 151)
+exe 'vert 3resize ' . ((&columns * 80 + 75) / 151)
 exe '4resize ' . ((&lines * 18 + 20) / 40)
-exe 'vert 4resize ' . ((&columns * 75 + 75) / 151)
+exe 'vert 4resize ' . ((&columns * 80 + 75) / 151)
 tabnext 1
-badd +1 Makefile
-badd +3 src/main.c
-badd +24 src/lib/users/register.c
-badd +2 src/lib/users/login.c
-badd +0 src/interface.c
-badd +4 project/Main/Interface_login.c
-badd +0 src/headers/interface.h
+badd +0 ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/src/main.c
+badd +329 ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/src/lib/db/db.c
+badd +8 ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/project/Edit_Status/Edit_Status/Product_EDIT_ADMIN.cpp
+badd +54 ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/Makefile
+badd +14 ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/src/headers/interface.h
+badd +984 ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/src/interface.c
+badd +1 ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/src/headers/db.h
+badd +17 ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/sample.c
+badd +15 ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/src/lib/users/login.c
+badd +25 ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/src/headers/userstruct.h
+badd +4 ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/src/lib/users/register.c
+badd +4 ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/project/Main/Interface_login.c
+badd +9 ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/src/lib/products/addproducts.c
+badd +3 ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/project/Admin/Interface_main.c
+badd +4 ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/project/Cart.c
+badd +16 ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/project/search.c
+badd +4 ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/project/Search_Result/Search_Result/Product/Book_Search_Result_User.cpp
+badd +6 ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/src/lib/products/edit.c
+badd +1 ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/src/headers/addproducts.h
+badd +3 ~/adrive/IISERK/Sem-9/CS5101/mid-sem-assignment/ecommerce/src/headers/edit.h
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -834,7 +987,6 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &so = s:so_save | let &siso = s:siso_save
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

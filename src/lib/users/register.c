@@ -4,7 +4,7 @@
 #include "../../headers/db.h"
 #include "../../headers/userstruct.h"
 
-void regi(char fname[], char lname[], char username[], char password[])
+int regi(char fname[], char lname[], char username[], char password[])
 {
     struct users input;
     input.id=getid("users")+1;
@@ -14,5 +14,9 @@ void regi(char fname[], char lname[], char username[], char password[])
     strcpy(input.password, password);
     strcpy(input.role, "customer");
     input.status=1;
-    writeusers(input);
+    if(writeusers(input)==0) {
+        return 0;
+    } else {
+        return 1;
+    }
 }
